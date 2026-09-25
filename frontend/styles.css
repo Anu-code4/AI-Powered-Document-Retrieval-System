@@ -1,0 +1,100 @@
+:root{
+    --bg:#0f172a;
+    --sidebar:#0b1220;
+    --card:#111827;
+    --border:#334155;
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+
+    --primary:#2563eb;
+    --primary2:#3b82f6;
+
+    --success:#22c55e;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+}
+
+html,
+body,
+[data-testid="stAppViewContainer"]{
+    background:linear-gradient(180deg,#0b1220,#111827);
+    color:var(--text);
+}
+
+[data-testid="stSidebar"]{
+    background:var(--sidebar);
+    border-right:1px solid var(--border);
+}
+
+.block-container{
+    padding-top:1.2rem;
+    max-width:1200px;
+}
+
+.stButton>button{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:linear-gradient(90deg,var(--primary),var(--primary2));
+    color:#fff;
+    font-weight:700;
+    transition:.2s;
+}
+
+.stButton>button:hover{
+    transform:translateY(-2px);
+}
+
+div[data-testid="stChatMessage"],
+div[data-testid="stMetric"],
+[data-testid="stFileUploader"]{
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:rgba(17,24,39,.65);
+}
+
+div[data-testid="stChatMessage"]{
+    border-radius:14px;
+    padding:.7rem;
+    margin-bottom:.8rem;
+    background:rgba(17,24,39,.78);
+}
+
+div[data-testid="stMetric"]{
+    padding:12px;
+}
+
+[data-testid="stFileUploader"]{
+    padding:10px;
+    background:rgba(17,24,39,.45);
+}
+
+.stAlert,
+textarea,
+input{
+    border-radius:12px;
+}
+
+hr{
+    border-color:var(--border);
+}
+
+.caption,
+small{
+    color:var(--muted);
+}
+
+h1,
+h2,
+h3{
+    color:var(--text);
+}
+
+footer{
+    visibility:hidden;
+}
+
+header{
+    background:transparent !important;
+}
