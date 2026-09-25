@@ -63,93 +63,129 @@ Ollama (Llama 3.2)
       |
       v
 Answer + Sources
+```
 
+## Tech Stack
 
+| Category | Technology |
+|---|---|
+| Language | Python 3.11 |
+| Backend | FastAPI |
+| Frontend | Streamlit |
+| LLM | Ollama / Llama 3.2 |
+| Embeddings | all-MiniLM-L6-v2 |
+| Vector Store | FAISS |
+| Keyword Retrieval | BM25 |
+| Reranker | Cross-Encoder |
+| Frameworks | LangChain, Sentence Transformers |
+| Document Processing | PyMuPDF, python-docx |
+| CI | GitHub Actions |
+| Deployment | Docker |
 
-Tech Stack
-Category	Technology
-Language	Python 3.11
-Backend	FastAPI
-Frontend	Streamlit
-LLM	Ollama / Llama 3.2
-Embeddings	all-MiniLM-L6-v2
-Vector Store	FAISS
-Keyword Retrieval	BM25
-Reranker	Cross-Encoder
-Frameworks	LangChain, Sentence Transformers
-Document Processing	PyMuPDF, python-docx
-CI	GitHub Actions
-Deployment	Docker
-Quick Start
-Prerequisites
-Python 3.11
-Git
-Ollama
-1. Clone the Repository
+## Quick Start
+
+### Prerequisites
+
+- Python 3.11
+- Git
+- Ollama
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Anu-code4/AI-Powered-Document-Retrieval-System.git
 cd AI-Powered-Document-Retrieval-System
-2. Create Virtual Environment
+```
 
-Windows
+### 2. Create Virtual Environment
 
+**Windows**
+
+```powershell
 py -3.11 -m venv venv
 .\venv\Scripts\Activate.ps1
+```
 
-Linux/macOS
+**Linux/macOS**
 
+```bash
 python3.11 -m venv venv
 source venv/bin/activate
-3. Install Dependencies
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-4. Set Up Ollama
+```
 
-Install Ollama and pull the required model:
+### 4. Set Up Ollama
 
+Install Ollama, then pull the required model:
+
+```bash
 ollama pull llama3.2
+```
 
 Start Ollama:
 
+```bash
 ollama serve
-Run the Application
-1. Start FastAPI
+```
 
-Open a terminal in the project directory:
+## Run the Application
 
+You need **Ollama, FastAPI, and Streamlit** running.
+
+### Terminal 1 — Start Ollama
+
+```bash
+ollama serve
+```
+
+### Terminal 2 — Start FastAPI
+
+Activate the virtual environment first if required.
+
+```bash
 uvicorn api:app --reload
+```
 
-API:
+FastAPI:
 
-http://127.0.0.1:8000
+`http://127.0.0.1:8000`
 
-Swagger:
+Swagger UI:
 
-http://127.0.0.1:8000/docs
+`http://127.0.0.1:8000/docs`
 
-2. Start Streamlit
+### Terminal 3 — Start Streamlit
 
-Open a second terminal in the project directory.
+Activate the same virtual environment, then run:
 
-Activate the virtual environment if required, then run:
-
+```bash
 streamlit run frontend/streamlit_app.py
+```
 
-Open the application:
+Open:
 
-http://localhost:8501
+`http://localhost:8501`
 
-Keep Ollama and FastAPI running while using the Streamlit application.
+> Keep all three services running while using the application.
 
-Prebuilt Retrieval Index
+## Prebuilt Retrieval Index
 
 The repository includes the prebuilt retrieval artifacts:
 
-chunks.json
-embedded_chunks.json
-faiss_index.bin
+- `chunks.json`
+- `embedded_chunks.json`
+- `faiss_index.bin`
 
-Rebuilding the vector index is not required to run the included application.
+Rebuilding the vector index is **not required** to run the included application.
 
-Project Structure
+## Project Structure
+
+```text
 AI-Powered-Document-Retrieval-System/
 ├── .github/
 ├── Document/
@@ -174,15 +210,22 @@ AI-Powered-Document-Retrieval-System/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
-API Endpoints
-Method	Endpoint	Purpose
-GET	/	Health check
-POST	/chat	Question answering
-POST	/upload	Document upload and indexing
-Evaluation
+```
+
+## API Endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/` | Health check |
+| POST | `/chat` | Question answering |
+| POST | `/upload` | Document upload and indexing |
+
+## Evaluation
 
 The project includes a custom evaluation dataset and evaluation pipeline covering retrieval quality, answer relevance, confidence, and source accuracy.
 
-Author
+## Author
 
-Anukriti Krishna
+**Anukriti Krishna**
+
+[GitHub](https://github.com/Anu-code4)
